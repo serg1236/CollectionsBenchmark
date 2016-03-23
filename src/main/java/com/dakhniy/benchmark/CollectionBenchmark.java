@@ -5,8 +5,7 @@ import com.dakhniy.benchmark.annotation.*;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Sergiy_Dakhniy
@@ -16,10 +15,11 @@ public class CollectionBenchmark {
     private Map<String, Method> methods = new HashMap<String, Method>();
     private Object targetObject;
 
-    public CollectionBenchmark(Object object) {
-        targetObject = object;
-        Class clazz = object.getClass();
+    public CollectionBenchmark init(Object taskHolder) {
+        targetObject = taskHolder;
+        Class clazz = taskHolder.getClass();
         initMethods(clazz);
+        return this;
     }
 
     private void initMethods(Class clazz) {
@@ -29,7 +29,7 @@ public class CollectionBenchmark {
             for(Annotation annotation: annotations) {
                 if(annotation instanceof BenchmarkTask) {
                     method.setAccessible(true);
-                    String taskName = ((BenchmarkTask)annotation).name();
+                    String taskName = ((BenchmarkTask)annotation).value();
                     methods.put(taskName, method);
                 }
             }
@@ -53,15 +53,25 @@ public class CollectionBenchmark {
         }
     }
 
-    public BenchmarkResult measure(String ... taskNames){
+    public Map<String, BenchmarkResult> measure(String ... taskNames){
         Runtime runtime = Runtime.getRuntime();
-        long millis = System.currentTimeMillis();
-        long mem = runtime.freeMemory();
+        Map<String, BenchmarkResult> results = new LinkedHashMap<>();
+        runtime.gc();
         for(String taskName: taskNames) {
+            System.out.printf("[%s] Executing %s \n", targetObject.toString(), taskName);
+            long millis = System.currentTimeMillis();
+            long memBefore = runtime.totalMemory() - runtime.freeMemory();
             executeTask(taskName);
+            long timeUsed = System.currentTimeMillis() - millis;
+            long memAfter = runtime.totalMemory() - runtime.freeMemory();
+            long memoryUsed = memAfter - memBefore;
+            results.put(taskName, new BenchmarkResult(memoryUsed, timeUsed));
         }
-        long memoryUsed = mem - runtime.freeMemory();
-        long timeUsed = System.currentTimeMillis() - millis;
-        return new BenchmarkResult(memoryUsed, timeUsed, taskNames);
+        return results;
     }
+
+    public Map<String, BenchmarkResult> measure() {
+        return measure(methods.keySet().toArray(new String[]{}));
+    }
+
 }

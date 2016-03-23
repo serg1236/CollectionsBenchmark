@@ -1,0 +1,42 @@
+Task batch for HashMap:
+Task name                      Time used                      Memory Used (bytes)           
+Put                            0:34.586                       1,025,872,216                 
+GetExists                      0:0.064                        16,902,776                    
+GetNotExists                   0:0.012                        0                             
+Remove                         0:1.020                        23,776,176                    
+
+Task batch for TreeMap:
+Task name                      Time used                      Memory Used (bytes)           
+Put                            0:18.423                       1,042,957,992                 
+GetExists                      0:0.279                        15,854,192                    
+GetNotExists                   0:0.106                        0                             
+Remove                         0:5.560                        26,026,232                    
+
+Task batch for LinkedHashMap:
+Task name                      Time used                      Memory Used (bytes)           
+Put                            0:16.084                       1,143,795,576                 
+GetExists                      0:0.459                        6,680,088                     
+GetNotExists                   0:0.019                        0                             
+Remove                         0:0.963                        34,709,264                    
+
+Task batch for ConcurrentHashMap:
+Task name                      Time used                      Memory Used (bytes)           
+Put                            0:15.643                       1,079,354,464                 
+GetExists                      0:0.129                        17,091,520                    
+GetNotExists                   0:0.012                        0                             
+Remove                         0:1.994                        9,556,376                     
+
+Task batch for Object2ObjectOpenHashMap:
+Task name                      Time used                      Memory Used (bytes)           
+Put                            0:12.245                       867,271,232                   
+GetExists                      0:0.050                        16,141,600                    
+GetNotExists                   0:33.599                       0                             
+Remove                         0:1.479                        10,182,800                    
+
+Task batch for Object2ObjectAVLTreeMap:
+Task name                      Time used                      Memory Used (bytes)           
+Put                            0:15.474                       961,993,984                   
+GetExists                      0:0.281                        16,147,824                    
+GetNotExists                   0:0.112                        0                             
+Remove                         0:7.826                        13,520,440                    
+

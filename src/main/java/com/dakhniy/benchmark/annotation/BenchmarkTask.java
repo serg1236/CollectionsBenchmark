@@ -11,6 +11,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface BenchmarkTask {
-    String name();
-    String message() default "";
+    String value();
 }

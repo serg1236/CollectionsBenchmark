@@ -1,0 +1,24 @@
+Task batch for ArrayList:
+Task name                      Time used                      Memory Used (bytes)           
+AddToHead                      0:8.641                        6,785,000                     
+AddToTail                      0:15.035                       568,672,744                   
+RemoveFromHead                 0:20.025                       0                             
+GetFromTail                    0:0.007                        0                             
+GetFromMiddle                  0:0.000                        0                             
+
+Task batch for LinkedList:
+Task name                      Time used                      Memory Used (bytes)           
+AddToHead                      0:0.014                        6,184,184                     
+AddToTail                      0:26.599                       719,919,800                   
+RemoveFromHead                 0:0.000                        0                             
+GetFromTail                    0:0.005                        0                             
+GetFromMiddle                  1:22.098                       0                             
+
+Task batch for Vector:
+Task name                      Time used                      Memory Used (bytes)           
+AddToHead                      0:3.458                        5,635,904                     
+AddToTail                      0:18.226                       543,225,104                   
+RemoveFromHead                 0:14.913                       0                             
+GetFromTail                    0:0.015                        0                             
+GetFromMiddle                  0:0.000                        0                             
+

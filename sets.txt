@@ -1,0 +1,36 @@
+Task batch for HashSet:
+Task name                      Time used                      Memory Used (bytes)           
+Add                            0:1.321                        92,332,360                    
+ContainsFalse                  0:1.044                        3,826,032                     
+ContainsTrue                   0:0.576                        46,960,392                    
+
+Task batch for TreeSet:
+Task name                      Time used                      Memory Used (bytes)           
+Add                            0:0.563                        87,618,032                    
+ContainsFalse                  0:0.283                        49,921,864                    
+ContainsTrue                   0:0.477                        -7,904,968                    
+
+Task batch for LinkedHashSet:
+Task name                      Time used                      Memory Used (bytes)           
+Add                            0:0.791                        99,850,872                    
+ContainsFalse                  0:0.345                        48,706,320                    
+ContainsTrue                   0:0.665                        -11,122,672                   
+
+Task batch for ConcurrentSkipListSet:
+Task name                      Time used                      Memory Used (bytes)           
+Add                            0:0.466                        82,432,056                    
+ContainsFalse                  0:0.567                        44,891,480                    
+ContainsTrue                   0:0.563                        -39,434,048                   
+
+Task batch for ObjectOpenHashSet:
+Task name                      Time used                      Memory Used (bytes)           
+Add                            0:0.916                        68,094,984                    
+ContainsFalse                  0:0.799                        15,092,472                    
+ContainsTrue                   0:0.634                        47,194,200                    
+
+Task batch for ObjectAVLTreeSet:
+Task name                      Time used                      Memory Used (bytes)           
+Add                            0:0.413                        78,720,208                    
+ContainsFalse                  0:0.371                        32,764,544                    
+ContainsTrue                   0:0.149                        48,884,200                    
+
