@@ -1,17 +1,16 @@
 package com.dakhniy.benchmark.task;
 
-import com.dakhniy.benchmark.ObjectFactory;
+import com.dakhniy.benchmark.factory.ObjectFactory;
 import com.dakhniy.benchmark.annotation.BenchmarkTask;
 
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by Sergiy_Dakhniy
  */
 public class MapTask<T> {
-    private Map<Integer, T> map;
-    private ObjectFactory<T> factory;
+    private final Map<Integer, T> map;
+    private final ObjectFactory<T> factory;
 
     public MapTask (Map<Integer, T> map, ObjectFactory<T> factory) {
         this.map = map;

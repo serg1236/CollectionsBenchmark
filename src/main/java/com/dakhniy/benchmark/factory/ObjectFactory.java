@@ -1,4 +1,4 @@
-package com.dakhniy.benchmark;
+package com.dakhniy.benchmark.factory;
 
 /**
  * Created by Sergiy_Dakhniy

@@ -16,7 +16,7 @@ public class BatchRunner{
 
     private boolean printToConsole = true;
     private boolean printToFile = false;
-    File file;
+    private File file;
 
     public void run(Object[] taskContainers, String[] taskNames) {
         CollectionBenchmark benchmark = new CollectionBenchmark();
@@ -48,7 +48,7 @@ public class BatchRunner{
         try {
             if(!file.createNewFile()){
                 throw new RuntimeException("Cannot create file");
-            };
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

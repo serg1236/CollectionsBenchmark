@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class CollectionBenchmark {
 
-    private Map<String, Method> methods = new HashMap<String, Method>();
+    private final Map<String, Method> methods = new HashMap<>();
     private Object targetObject;
 
     public CollectionBenchmark init(Object taskHolder) {
@@ -71,7 +71,8 @@ public class CollectionBenchmark {
     }
 
     public Map<String, BenchmarkResult> measure() {
-        return measure(methods.keySet().toArray(new String[]{}));
+        Set<String> keySet = methods.keySet();
+        return measure(keySet.toArray(new String[keySet.size()]));
     }
 
 }

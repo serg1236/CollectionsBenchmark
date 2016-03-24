@@ -1,6 +1,6 @@
 package com.dakhniy.benchmark.task;
 
-import com.dakhniy.benchmark.ObjectFactory;
+import com.dakhniy.benchmark.factory.ObjectFactory;
 import com.dakhniy.benchmark.annotation.BenchmarkTask;
 
 import java.util.List;
@@ -9,8 +9,9 @@ import java.util.List;
  * Created by Sergiy_Dakhniy
  */
 public class ListTask<T> {
-    private List<T> list;
-    private ObjectFactory<T> factory;
+    private final List<T> list;
+    private final ObjectFactory<T> factory;
+
 
     public ListTask (List<T> list, ObjectFactory<T> factory) {
         this.list = list;
